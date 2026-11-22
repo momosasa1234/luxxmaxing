@@ -5,7 +5,8 @@ import { GoogleGenAI } from "@google/genai";
 const app=express(); app.use(cors()); app.use(express.json({limit:"20mb"}));
 const port=Number(process.env.PORT||8787), key=process.env.GEMINI_API_KEY;
 const ai=key?new GoogleGenAI({apiKey:key}):null;
-const analysisModel=process.env.GEMINI_ANALYSIS_MODEL||"gemini-2.5-flash";
+// Gemini 3.8 Flash is the supported default for new API users.
+const analysisModel=process.env.GEMINI_ANALYSIS_MODEL||"gemini-3.8-flash";
 const imageModel=process.env.GEMINI_IMAGE_MODEL||"gemini-2.0-flash-preview-image-generation";
 const judgeModel=process.env.GEMINI_JUDGE_MODEL||analysisModel;
 function requireAI(_req:express.Request,res:express.Response,next:express.NextFunction){if(!ai)return res.status(503).json({error:"יש להגדיר GEMINI_API_KEY במשתני הסביבה של השרת."});next();}
