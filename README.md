@@ -64,3 +64,15 @@ npm run dev
 - תמונות דוגמה מובנות, drag-and-drop מלא, בדיקות אוטומטיות וניהול הרשאות עדיין אינם כלולים.
 - הסליידר הבסיסי כלול; מומלץ לבדוק אותו בדפדפנים ובמסכים שונים.
 - ציון AI הוא הערכה ולא מדד אובייקטיבי. יש להשתמש גם בביקורת אנושית.
+
+
+## פריסה ב-Render
+
+הפרויקט כולל `render.yaml`. ב-Render בחר **New → Blueprint** וחבר את המאגר הזה. Render ישתמש בפקודות:
+
+- Build: `npm install && npm run build`
+- Start: `npm start`
+
+במסך Environment של השירות יש להגדיר את `GEMINI_API_KEY` כמפתח סודי. אפשר להגדיר שם גם את מזהי המודלים `GEMINI_ANALYSIS_MODEL`, `GEMINI_IMAGE_MODEL` ו-`GEMINI_JUDGE_MODEL` בהתאם למודלים הזמינים בפרויקט Google AI שלך. אין להעלות קובץ `.env` או מפתח API ל-GitHub.
+
+השרת מגיש את ממשק Vite מתוך `dist/` ואת נתיבי ה-API מאותו origin. בדיקת בריאות זמינה ב-`/api/health`.
