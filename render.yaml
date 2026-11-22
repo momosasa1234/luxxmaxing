@@ -12,8 +12,8 @@ services:
       - key: GEMINI_API_KEY
         sync: false
       - key: GEMINI_ANALYSIS_MODEL
-        value: gemini-2.5-flash
+        value: gemini-3.8-flash
       - key: GEMINI_IMAGE_MODEL
         value: gemini-2.0-flash-preview-image-generation
       - key: GEMINI_JUDGE_MODEL
-        value: gemini-2.5-flash
+        value: gemini-3.8-flash
